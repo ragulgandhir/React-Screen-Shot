@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Charts from "./components/Charts";
+import Download from "./components/Content";
+import Sidebar from "./components/Menu";
+import "bootstrap/dist/css/bootstrap.css";
+import { Row, Col, Container } from "react-bootstrap";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Container> */}
+      <Row className="landing">
+      <Col>
+          <Sidebar/>
+        </Col>
+        <Col style ={{marginLeft:"-80px"}}>
+          <Charts />
+        </Col>
+        <Col style ={{marginLeft:"50px"}}>
+          <Download />
+        </Col>
+      </Row>
+      {/* </Container> */}
     </div>
   );
 }
