@@ -5,6 +5,7 @@ import Download from "./components/Content";
 import Sidebar from "./components/Menu";
 import "bootstrap/dist/css/bootstrap.css";
 import { Row, Col, Container } from "react-bootstrap";
+import WaterMark from "./components/watermark";
 import "./App.css";
 
 function App() {
@@ -18,11 +19,12 @@ function App() {
         <Col style ={{marginLeft:"-80px"}}>
           <Charts />
         </Col>
-        <Col style ={{marginLeft:"50px"}}>
+        <Col style ={{width:"80px"}}>
           <Download />
         </Col>
       </Row>
       {/* </Container> */}
+      <WaterMark />
     </div>
   );
 }

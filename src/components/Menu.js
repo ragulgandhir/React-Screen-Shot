@@ -5,10 +5,8 @@ import {
     CDBSidebarMenuItem,
     CDBSidebarContent,
     CDBSidebarMenu,
-    CDBSidebarFooter,
-    CDBBtn, 
-    CDBIcon, 
-    CDBContainer
+    CDBSidebarFooter, 
+    CDBIcon
   } from 'cdbreact';
 
   import { useScreenshot, createFileName } from "use-react-screenshot";
@@ -31,6 +29,7 @@ import {
       const downloadScreenshot = () => takeScreenShot(ref.current).then(download);
 
     return (
+      <>
         <CDBSidebar textColor="#333" backgroundColor="#f0f0f0" ref={ref}>
           <CDBSidebarHeader prefix={<i className="fa fa-bars" />}>
             <div className="container" style={{ display: 'flex', alignItems: 'center' }}>
@@ -51,18 +50,9 @@ import {
               </CDBSidebarMenuItem>
             </CDBSidebarMenu>
           </CDBSidebarContent>
-        <CDBSidebarFooter style={{ textAlign: 'center' }}>
-          <div
-            className="sidebar-btn-wrapper"
-            style={{ padding: '20px 5px' }}
-          >
-            Sign Up
-          </div>
-          <CDBContainer>
-            <CDBBtn color="warning" onClick={downloadScreenshot}><CDBIcon icon="download" />Download</CDBBtn>
-          </CDBContainer>
-        </CDBSidebarFooter>
         </CDBSidebar>
+        <button style = {{color:"#EAB308"}} onClick={downloadScreenshot}><CDBIcon icon="download" />Download</button>
+        </>
     )
   };
   
