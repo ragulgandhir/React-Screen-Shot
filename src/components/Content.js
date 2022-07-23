@@ -1,11 +1,9 @@
-import React, { useState, useEffect, createRef } from "react";
+import React, { useEffect, createRef } from "react";
 import Text from "./Text";
 import { useScreenshot, createFileName } from "use-react-screenshot";
 import { CDBIcon } from "cdbreact";
-import CSVImg from "./csv.png";
 
-const images = <img src={CSVImg} />;
-function Download() {
+function ContentPage() {
   const ref = createRef(null);
   const [image, takeScreenShot] = useScreenshot();
 
@@ -43,4 +41,4 @@ function Download() {
     </div>
   );
 }
-export default Download;
+export default ContentPage;

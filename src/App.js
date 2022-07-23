@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Charts from "./components/Charts";
-import Download from "./components/Content";
+import ContentPage from "./components/Content";
 import Sidebar from "./components/Menu";
 import "bootstrap/dist/css/bootstrap.css";
 import { Row, Col, Container } from "react-bootstrap";
@@ -16,15 +16,15 @@ function App() {
       <Col>
           <Sidebar/>
         </Col>
-        <Col style ={{marginLeft:"-80px"}}>
+        <Col style ={{marginLeft:"-40px", marginRight:"50px" }}>
           <Charts />
         </Col>
         <Col style ={{width:"80px"}}>
-          <Download />
+          <ContentPage />
         </Col>
       </Row>
       {/* </Container> */}
-      <WaterMark />
+      {/* <WaterMark /> */}
     </div>
   );
 }
