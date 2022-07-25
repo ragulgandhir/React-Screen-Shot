@@ -9,7 +9,6 @@ import {
   CDBIcon,
   CDBContainer
 } from "cdbreact";
-
 import { useScreenshot, createFileName } from "use-react-screenshot";
 import CSVImg from "./csvSmall.png";
 

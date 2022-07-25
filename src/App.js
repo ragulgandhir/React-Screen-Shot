@@ -5,7 +5,6 @@ import ContentPage from "./components/Content";
 import Sidebar from "./components/Menu";
 import "bootstrap/dist/css/bootstrap.css";
 import { Row, Col, Container } from "react-bootstrap";
-import WaterMark from "./components/watermark";
 import "./App.css";
 
 function App() {
@@ -24,7 +23,6 @@ function App() {
         </Col>
       </Row>
       {/* </Container> */}
-      {/* <WaterMark /> */}
     </div>
   );
 }
