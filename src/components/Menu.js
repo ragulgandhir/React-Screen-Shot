@@ -1,4 +1,4 @@
-import React, { useState, createRef } from "react";
+import React, { useState, createRef, useEffect } from "react";
 import {
   CDBSidebar,
   CDBSidebarHeader,
@@ -22,6 +22,15 @@ const Sidebar = () => {
   });
   const [showImage, setShowImage] = useState(false);
 
+  useEffect(() => {
+    if(showImage) {
+      takeScreenShot(ref.current).then(download);
+      setTimeout(() => {
+        setShowImage(false)
+      }, 0.5);
+  }
+}, [showImage]);
+
   const download = (image, { name = "img", extension = "jpg" } = {}) => {
     const a = document.createElement("a");
     a.href = image;
@@ -29,12 +38,10 @@ const Sidebar = () => {
     a.click();
   };
 
-  const downloadScreenshot = () => {
-    takeScreenShot(ref.current).then(download);
-  }
-    
-  const imageShow = () => {
-    setShowImage(!showImage)
+  const downloadScreenshot = (e) => {
+    e.preventDefault();
+    // takeScreenShot(ref.current).then(download);
+    setShowImage(true);
   }
   return (
     <>
@@ -66,12 +73,20 @@ const Sidebar = () => {
         </CDBSidebarContent>
         <CDBSidebarFooter>
           <CDBSidebarMenuItem>
-            {showImage ? images : ""}
+            {/* {showImage ? images : ""} */}
+            {/* <img
+              src={
+                "#####"
+              }
+              alt=""
+              style={{ width: "30px" }}
+            /> */}
+            {showImage && <img src={CSVImg} alt="logo.png" />}
           </CDBSidebarMenuItem>
         </CDBSidebarFooter>
       </CDBSidebar>
       </CDBContainer>
-      <button style={{ color: "#EAB308" }} onClick={() => {downloadScreenshot(); imageShow()}}>
+      <button style={{ color: "#EAB308" }} onClick={downloadScreenshot}>
         <CDBIcon icon="download" />
         Download
       </button>

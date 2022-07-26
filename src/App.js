@@ -5,13 +5,14 @@ import ContentPage from "./components/Content";
 import Sidebar from "./components/Menu";
 import "bootstrap/dist/css/bootstrap.css";
 import { Row, Col, Container } from "react-bootstrap";
+import PDFContent from "./components/jspdf";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       {/* <Container> */}
-      <Row className="landing">
+      {/* <Row className="landing">
       <Col>
           <Sidebar/>
         </Col>
@@ -21,8 +22,9 @@ function App() {
         <Col style ={{width:"80px"}}>
           <ContentPage />
         </Col>
-      </Row>
+      </Row> */}
       {/* </Container> */}
+    <PDFContent />
     </div>
   );
 }
