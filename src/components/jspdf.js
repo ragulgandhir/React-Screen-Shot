@@ -2,6 +2,7 @@ import React from 'react'
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import Charts from './Charts';
+import EdgesFlow from "./OverviewFlow";
 
 
 function PDFContent() {
@@ -10,16 +11,21 @@ function PDFContent() {
         html2canvas(input, {logging: true, letterRendering:1, useCORS: true}).then(canvas =>{
             const imgWidth = 200;
             const imgHeight = canvas.height * imgWidth / canvas.width;
-            const imgData = canvas.toDataURL('img/png');
+            const imgData = canvas.toDataURL('reactflow/pdf');
             const pdf = new jsPDF('p', 'mm', 'a4');
-            pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+            pdf.addImage(imgData, 'PDF', 0, 0, imgWidth, imgHeight);
             pdf.save("sample.pdf");
         })
     }
+
+    function PDFprint(){
+      window.print();
+    }
   return (
     <div id="App">
-        <button onClick={() => exportPDF()}>Print</button>
-        <Charts />    
+        <button onClick={() => PDFprint()}>Print</button>
+        {/* <Charts />     */}
+        <EdgesFlow />
     </div>
   )
 }

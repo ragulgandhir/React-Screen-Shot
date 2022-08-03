@@ -6,6 +6,7 @@ import Sidebar from "./components/Menu";
 import "bootstrap/dist/css/bootstrap.css";
 import { Row, Col, Container } from "react-bootstrap";
 import PDFContent from "./components/jspdf";
+import EdgesFlow from "./components/OverviewFlow";
 import "./App.css";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       </Row> */}
       {/* </Container> */}
     <PDFContent />
+    {/* <EdgesFlow /> */}
     </div>
   );
 }
